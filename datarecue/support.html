@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &amp; FAQ — DataRescue</title>
+<meta name="description" content="Support, frequently asked questions, and contact information for DataRescue, a Windows data-recovery tool.">
+<style>
+  :root{--bg:#ffffff;--fg:#1a1a1a;--muted:#5f6368;--line:#e3e5e8;--accent:#1a73e8;--code:#f4f5f7}
+  @media (prefers-color-scheme:dark){:root{--bg:#141518;--fg:#e8eaed;--muted:#9aa0a6;--line:#2c2f34;--accent:#8ab4f8;--code:#1e2126}}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:48px 22px 96px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:8px}
+  h1{font-size:30px;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
+  .meta{color:var(--muted);font-size:14px}
+  h2{font-size:19px;margin:34px 0 8px}
+  h3{font-size:16px;margin:22px 0 4px}
+  p{margin:10px 0}ul{margin:10px 0;padding-left:22px}li{margin:6px 0}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  .card{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:14px 0}
+  code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:14px}
+  footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  @media(max-width:520px){.wrap{padding:32px 18px 72px}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>DataRescue — Support</h1>
+  <div class="meta">Product: DataRescue (Microsoft Store ID 9MTDF44NZ0JK) &nbsp;·&nbsp; Developer: y8ngl</div>
+</header>
+
+<h2>Contact</h2>
+<div class="card">
+  <p><strong>Email:</strong> <a href="mailto:1962359591@qq.com">1962359591@qq.com</a></p>
+  <p><strong>Issue tracker:</strong> <a href="https://github.com/1aq/1aq.github.io/issues">github.com/1aq/1aq.github.io/issues</a></p>
+  <p>When reporting a problem, please include your Windows version, the app version, and a short description of the steps that reproduce it. Include the Product ID <code>9MTDF44NZ0JK</code> for faster assistance.</p>
+</div>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Why does a UAC prompt appear when I scan a physical disk?</h3>
+<p>Reading the raw sectors of a physical disk (<code>\\.\PhysicalDriveN</code>) requires an administrator token. Windows does not grant this to standard-user processes, including MSIX-packaged apps. The main DataRescue app stays unelevated; it only starts a separate, read-only helper process with elevation when you begin a physical-disk scan. If you decline the prompt, the app continues in disk-image mode.</p>
+
+<h3>Does DataRescue write to the disk it is scanning?</h3>
+<p>No. The recovery engine opens disks read-only. Recovered files are saved only to a location you choose.</p>
+
+<h3>Can I scan a disk image instead of a physical disk?</h3>
+<p>Yes. Disk-image files can be scanned without elevation, so no UAC prompt is required for that path.</p>
+
+<h3>Which file systems are supported?</h3>
+<p>FAT, exFAT, NTFS and Ext4, plus file carving for common file types when file-system metadata is unavailable.</p>
+
+<h3>Is my data uploaded anywhere?</h3>
+<p>No. All scanning and recovery happens locally on your computer. File contents are never transmitted.</p>
+
+<h3>The app reported a scan failure — what should I do?</h3>
+<p>Try scanning a disk image to confirm the app works, then re-run the physical-disk scan and accept the UAC prompt. If the problem persists, email the log location shown in the error dialog together with the Product ID.</p>
+
+<footer>
+  <p><a href="index.html">Product page</a> &nbsp;·&nbsp; <a href="../privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://www.microsoft.com/store/apps/9MTDF44NZ0JK">Microsoft Store listing</a></p>
+  <p>© 2026 y8ngl.</p>
+</footer>
+
+</div>
+</body>
+</html>
