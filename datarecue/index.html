@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataRescue — Recover deleted files and lost partitions</title>
+<meta name="description" content="DataRescue is a Windows data-recovery tool that restores deleted files, rebuilds lost partitions, and carves files from raw disks and disk images.">
+<style>
+  :root{--bg:#ffffff;--fg:#1a1a1a;--muted:#5f6368;--line:#e3e5e8;--accent:#1a73e8;--code:#f4f5f7;--ok:#188038}
+  @media (prefers-color-scheme:dark){:root{--bg:#141518;--fg:#e8eaed;--muted:#9aa0a6;--line:#2c2f34;--accent:#8ab4f8;--code:#1e2126;--ok:#81c995}}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+  .wrap{max-width:820px;margin:0 auto;padding:48px 22px 96px}
+  header{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:8px}
+  h1{font-size:34px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
+  .tag{color:var(--accent);font-weight:600;font-size:15px}
+  .meta{color:var(--muted);font-size:14px;margin-top:10px}
+  h2{font-size:20px;margin:38px 0 10px;letter-spacing:-.005em}
+  p{margin:10px 0}ul{margin:10px 0;padding-left:22px}li{margin:6px 0}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:11px 20px;border-radius:6px;font-weight:600;margin:14px 8px 0 0}
+  .btn:hover{text-decoration:none;opacity:.92}
+  .btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+  .card{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:14px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+  .grid .card{margin:0}
+  code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:14px}
+  footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  @media(max-width:520px){.wrap{padding:32px 18px 72px}h1{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="tag">Windows · Data Recovery</div>
+  <h1>DataRescue</h1>
+  <p>Recover deleted files, rebuild lost partitions, and carve data from raw disks and disk images — a local, read-only recovery tool for Windows.</p>
+  <div class="meta">Developer: y8ngl &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp; Available on the Microsoft Store</div>
+</header>
+
+<h2>What it does</h2>
+<p>DataRescue helps individuals and small businesses recover data lost to accidental deletion, formatting, or partition-table damage. It scans FAT/exFAT/NTFS/Ext4 volumes, rebuilds lost or corrupted partition tables, and carves files out of raw disk images whose file-system metadata is gone.</p>
+
+<div class="grid">
+  <div class="card"><strong>Deleted-file recovery</strong><br>Scan a volume or whole physical disk and restore files that the file system no longer indexes.</div>
+  <div class="card"><strong>Lost partition finder</strong><br>Detect and rebuild partition tables that were lost or corrupted.</div>
+  <div class="card"><strong>Signature carving</strong><br>Recover JPEG, PDF, Office and other known file types from raw images when metadata is gone.</div>
+  <div class="card"><strong>Local &amp; private</strong><br>All scanning happens on your machine. No file contents are uploaded anywhere.</div>
+</div>
+
+<h2>Safety and privacy by design</h2>
+<ul>
+  <li><strong>Read-only on disks.</strong> The recovery engine opens disks for reading only — it never writes to the disk it scans.</li>
+  <li><strong>Least privilege.</strong> The main app runs as a standard user. Only when you start a physical-disk scan does it launch a separate helper process with elevation (one UAC prompt), because reading raw sectors of <code>\\.\PhysicalDriveN</code> requires an administrator token.</li>
+  <li><strong>Declining UAC is safe.</strong> If you decline the prompt, the app falls back to scanning disk-image files — nothing breaks.</li>
+  <li><strong>No telemetry of your data.</strong> File contents and recovered data never leave your computer.</li>
+</ul>
+
+<h2>Get it &amp; get help</h2>
+<a class="btn" href="https://www.microsoft.com/store/apps/9MTDF44NZ0JK">Get it from Microsoft Store</a>
+<a class="btn alt" href="support.html">Support &amp; FAQ</a>
+
+<footer>
+  <p><a href="../privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="support.html">Support</a> &nbsp;·&nbsp; <a href="https://github.com/1aq/1aq.github.io/issues">Report an issue</a></p>
+  <p>© 2026 y8ngl. DataRescue is provided "as is" for data-recovery purposes.</p>
+</footer>
+
+</div>
+</body>
+</html>
